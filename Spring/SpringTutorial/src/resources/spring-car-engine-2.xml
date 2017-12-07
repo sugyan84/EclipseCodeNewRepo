@@ -1,0 +1,15 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			
+<beans>
+	<bean id="car2" class="beans.Car2" dependency-check="objects">
+		<property name="engine" ref="Benz"></property>
+		<property name="carName" value="Tata"></property>
+	</bean>
+	
+	<bean id="Benz" class="beans.Engine2">
+	 <property name="modelYear" value="2017"></property>
+	</bean>
+	
+
+</beans>

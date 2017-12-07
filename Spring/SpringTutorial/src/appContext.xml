@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- load the properties file: sport.properties -->
+	<context:property-placeholder location="classpath:sport.properties"/>
+	
+	
+	<bean id="fortuneObj" class="demo.HappyFortuneService">
+		
+	</bean>
+	
+	<bean id="trackcoach" class="demo.CricketCoach">
+		<!--  <constructor-arg ref="fortuneObj"></constructor-arg> -->
+		
+		<property name="fortuneService" ref="fortuneObj"></property>
+		<property name="emailAddress" value="${cricketEmailAddress}"></property>
+		<property name="team" value="${cricketTeam}"></property>
+		
+	</bean>
+	
+	
+	
+	<bean id="randomFortune" class="demo.RandomFortuneService">
+	<constructor-arg>
+  		<array>
+  			<value>Fortune1</value>
+  			<value>Fortune2</value>
+  			<value>Fortune3</value>
+  		</array>
+    </constructor-arg>
+	</bean>
+
+
+</beans>			

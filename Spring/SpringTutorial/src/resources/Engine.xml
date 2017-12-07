@@ -1,0 +1,11 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			
+<beans>
+	<bean id="engine" class="beans.Engine" scope="prototype">
+		<property name="modelno" value="2016"></property>
+	
+	</bean>
+
+
+</beans>		
