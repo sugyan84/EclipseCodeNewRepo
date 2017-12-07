@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="D:/app/piks/product/11.2.0/dbhome_1/jdbc/lib/ojdbc6.jar" sourcepath="C:/Users/PIKS-PC/Desktop/ojdbc6.jar.src.zip"/>
+	<classpathentry kind="lib" path="E:/Software packet/JAVA/Tomcat (Apache Server)/commons-dbcp2-2.1.1/commons-dbcp2-2.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/Software packet/JAVA/Tomcat (Apache Server)/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/Software packet/JAVA/Tomcat (Apache Server)/commons-pool2-2.4.2/commons-pool2-2.4.2.jar"/>
+	<classpathentry kind="lib" path="E:/Software packet/JAVA/SQLite JDBC Jar/sqlite-jdbc-3.20.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
