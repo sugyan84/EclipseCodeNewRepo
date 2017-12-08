@@ -2,10 +2,14 @@ package com.luv2code.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.logging.Logger;
 
 public class TestJdbc
 {
 
+	Logger l = Logger.getLogger(this.getClass().getSimpleName());
+	
+	
 	public static void main(String[] args)
 	{
 		
@@ -14,9 +18,13 @@ public class TestJdbc
 		String username = "hbstudent";
 		String password = "hbstudent";
 		
+		
+		
 		try
 		{
 			System.out.println("Connecting to mySQL database...");
+			
+			
 			
 			Connection con = DriverManager.getConnection(jdbcUrl, username, password);
 			
