@@ -26,7 +26,7 @@ public class TestJdbc
 
 			// System.out.println("Connection successful");
 
-			log.info("inf");
+			log.info("info");
 
 		}
 		catch(Exception e)
