@@ -1,4 +1,4 @@
-package new3;
+package problem.SapientOnline;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
