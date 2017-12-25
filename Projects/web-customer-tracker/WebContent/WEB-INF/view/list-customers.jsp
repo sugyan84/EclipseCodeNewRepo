@@ -6,9 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Customers List</title>
 
-<link type="text/css"
-		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css" />
 
 </head>
 <body>
@@ -24,23 +23,28 @@
 
 	<div id="container">
 		<div id="content">
-			
+
+			<!--add customer button -->
+			<input type="button" value="Add Customer"
+				onclick="window.location.href='showFormForAdd'; return false;"
+				class="add-button" />
+
 			<table>
 				<tr>
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>E-mail</th>
 				</tr>
-				
+
 				<c:forEach var="temp" items="${customers}">
 					<tr>
 						<td>${temp.firstName}
 						<td>${temp.lastName}
 						<td>${temp.emailAddress}
 					</tr>
-				
+
 				</c:forEach>
-			
+
 			</table>
 		</div>
 
