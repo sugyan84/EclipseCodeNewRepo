@@ -44,8 +44,21 @@ public class CustomerDAOImpl implements CustomerDAO
 		Session s = sessionFactory.getCurrentSession();
 
 		// create a query
-		s.save(c);
+		//s.save(c); //Insert new record
+		
+		s.saveOrUpdate(c); //Insert if id is empty, Update if id is available.
 
+	}
+
+	@Override
+	@Transactional
+	public Customer getCustomer(int id)
+	{
+		Session s = sessionFactory.getCurrentSession();
+		
+		Customer customerFetchedFromDB = s.get(Customer.class, id);
+		
+		return customerFetchedFromDB;
 	}
 
 }

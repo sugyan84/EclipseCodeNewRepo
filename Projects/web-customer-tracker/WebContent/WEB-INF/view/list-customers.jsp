@@ -34,13 +34,23 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>E-mail</th>
+					<th>Actions</th>
 				</tr>
 
 				<c:forEach var="temp" items="${customers}">
+
+					<!--embedd the customer ids in the hyperLink  -->
+					<c:url var="updateLink"  value="/customer/showFormForUpdate">
+						<c:param name="customerId" value="${temp.id}"></c:param>
+					</c:url>
 					<tr>
-						<td>${temp.firstName}
-						<td>${temp.lastName}
-						<td>${temp.emailAddress}
+						<td>${temp.firstName}</td>
+						<td>${temp.lastName}</td>
+						<td>${temp.emailAddress}</td>
+						
+						<td>
+							<a href="${updateLink}">Modify</a>
+						</td>
 					</tr>
 
 				</c:forEach>

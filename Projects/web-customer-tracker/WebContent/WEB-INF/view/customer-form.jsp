@@ -28,6 +28,7 @@
 	
 		<form:form action="saveCustomer" modelAttribute="newCustomer" method="POST">
 		
+			<form:hidden path="id"/>
 			<table>
 				<tbody>
 					<tr>

@@ -8,7 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.luv2code.springdemo.dao.CustomerDAO;
 import com.luv2code.springdemo.entity.Customer;
 import com.luv2code.springdemo.service.CustomerService;
@@ -19,7 +22,8 @@ public class CustomerController
 {
 	// Inject DAO class's obj
 	/*
-	 * @Autowired private CustomerDAO customerDAO;
+	 * @Autowired 
+	 * private CustomerDAO customerDAO;
 	 */
 
 	// Inject CustomerService
@@ -56,5 +60,19 @@ public class CustomerController
 	{
 		customerService.saveCustomer(c);
 		return "redirect:/customer/list";		//Re-directing the user to another link
+	}
+	
+	
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("customerId") int id, Model m)
+	{
+		//get the Customer model with id= "id" from DB.
+		Customer customerFetched = customerService.getCustomer(id);
+		
+		//Bind the Model fetched from DB, to pre-populate the form.
+		m.addAttribute("newCustomer", customerFetched);
+		
+		return "customer-form";
+		
 	}
 }
