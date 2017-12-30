@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<a href="http://localhost:8080/web-customer-tracker/customer/list">Customers List</a>
+<a href="http://192.168.43.178:8080/web-customer-tracker/customer/list">Customers List</a>
 
 </body>
 </html>

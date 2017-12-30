@@ -11,17 +11,17 @@ import com.luv2code.springdemo.entity.Customer;
 @Service
 public class CustomerServiceImpl implements CustomerService
 {
-	//Inject CustomerDAO
+	// Inject CustomerDAO
 	@Autowired
 	private CustomerDAO customerDAO;
 
 	@Override
 	public List<Customer> getCustomers()
 	{
-		//delegating the call to customerDAO's getCustomers() method. 
+		// delegating the call to customerDAO's getCustomers() method.
 		return customerDAO.getCustomers();
 	}
-	
+
 	@Override
 	public void saveCustomer(Customer c)
 	{
@@ -32,10 +32,14 @@ public class CustomerServiceImpl implements CustomerService
 	public Customer getCustomer(int id)
 	{
 		Customer customerFetchedFromDB = customerDAO.getCustomer(id);
-		
+
 		return customerFetchedFromDB;
 	}
-	
-	
+
+	@Override
+	public void deleteCustomer(int id)
+	{
+		customerDAO.deleteCustomer(id);
+	}
 
 }

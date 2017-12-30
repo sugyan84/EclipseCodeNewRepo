@@ -31,7 +31,7 @@ public class CustomerDAOImpl implements CustomerDAO
 
 		// execute query and get the results
 		List<Customer> resultList = q.list();
-		
+
 		// return list
 		return resultList;
 	}
@@ -44,9 +44,9 @@ public class CustomerDAOImpl implements CustomerDAO
 		Session s = sessionFactory.getCurrentSession();
 
 		// create a query
-		//s.save(c); //Insert new record
-		
-		s.saveOrUpdate(c); //Insert if id is empty, Update if id is available.
+		// s.save(c); //Insert new record
+
+		s.saveOrUpdate(c); // Insert if id is empty, Update if id is available.
 
 	}
 
@@ -55,10 +55,24 @@ public class CustomerDAOImpl implements CustomerDAO
 	public Customer getCustomer(int id)
 	{
 		Session s = sessionFactory.getCurrentSession();
-		
+
 		Customer customerFetchedFromDB = s.get(Customer.class, id);
-		
+
 		return customerFetchedFromDB;
+	}
+
+	@Override
+	@Transactional
+	public void deleteCustomer(int id)
+	{
+		// get current hibernate session
+		Session s = sessionFactory.getCurrentSession();
+
+		Query q = s.createQuery("delete from Customer where id=:custId");
+		
+		q.setParameter("custId", id);
+		
+		q.executeUpdate();
 	}
 
 }
