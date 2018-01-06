@@ -11,11 +11,11 @@ import com.kashsplit.models.LoginForm;
 @RequestMapping("/login")
 public class GreetingController
 {
-	@RequestMapping("/showForm")
+	@RequestMapping("/trip")
 	public String showLoginForm(Model m)
 	{
-		m.addAttribute("loginForm", new LoginForm());
-		return "login";
+		
+		return "login2";
 	}
 	
 	

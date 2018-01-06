@@ -4,5 +4,7 @@
 
 <a href="login/showForm">Login</a>
 
+<a href="trial/trip">Trip</a>
+
 </body>
 </html>
