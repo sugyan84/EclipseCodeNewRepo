@@ -37,7 +37,7 @@ public class Main
 
 		long end = System.currentTimeMillis();
 
-		System.out.println("|" + response + "|");
+		//System.out.println("|" + response + "|");
 
 		double ans = (end - start);
 
